@@ -67,7 +67,7 @@ function placeObjects(map, type, amount) {
 }
 
 function drawMap() {
-    container.style.gridTemplateColumns = `repeat(${mapData[0].length}, 35px)`;
+    container.style.gridTemplateColumns = `repeat(${mapData[0].length}, 1fr)`;
     container.innerHTML = ''; // Clear the grid
     
     for (let y = 0; y < mapData.length; y++) {
@@ -141,8 +141,7 @@ function checkProximity() {
 }
 
 function startBattle(monY, monX) {
-    document.getElementById('ui').innerText = "Monster Defeated!";
-    document.body.style.backgroundColor = "#e74c3c"; // Visual cue
+    // Visual cue
     // Here is where you will eventually call your Phase 3 Battle Logic
 
     mapData[monY][monX] = 1;
@@ -150,8 +149,6 @@ function startBattle(monY, monX) {
 }
 
 function openLoot(lootY, lootX) {
-    document.getElementById('ui').innerText = "Loot Confirmed";
-    document.body.style.backgroundColor = "#fe9923";
 
     mapData[lootY][lootX] = 1;
     drawMap();
@@ -163,8 +160,6 @@ function attemptDescent() {
 
     if (monstersLeft === 0) {
         isTransitioning = true;
-        document.getElementById('ui').innerText = "Descending...";
-        document.body.style.backgroundColor = "#fff";
 
         transitionLayer.classList.add('no-transition');
         transitionLayer.classList.remove('active', 'exit');
@@ -188,8 +183,7 @@ function attemptDescent() {
         }, 700);
 
     } else {
-        document.getElementById('ui').innerText = `Locked! There's still enemies remaining.`;
-        document.body.style.backgroundColor = "#fff";
+        
     }
 }
 
@@ -292,8 +286,6 @@ window.addEventListener('keydown', (e) => {
         playerPos.y = newY;
         playerDir = targetDir;
         
-        document.getElementById('ui').innerText = "Exploring...";
-        document.body.style.backgroundColor = "#fff";
     } else {
         // Path is restricted (wall/monster/loot), so ONLY Rotate
         playerDir = targetDir;

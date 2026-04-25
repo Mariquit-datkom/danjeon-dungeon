@@ -23,10 +23,15 @@
     left: -100%;
 }
 
+.exploration-ui-container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
 #grid-container {
     display: grid;
-    width: fit-content;
-    margin: 20px auto;
+    width: 100%;
     line-height: 0;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
@@ -34,14 +39,20 @@
 
 .tile {
     position: relative;
-    width: 35px;
-    height: 35px;
-    background-color: #777;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
     border: none;
     cursor: pointer;
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('../assets/floor.png');
+    background-size: 100% 100%;
 }
 
-.wall { background-color: #000; cursor: not-allowed; }
+.wall { 
+    background-image: url('../assets/floor.png');
+    background-size: 100% 100%;
+    cursor: not-allowed; 
+}
 
 .player {
     z-index: 10;
@@ -50,13 +61,27 @@
 .player::before {
     content: '';
     position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
-    background-color: #3498db;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    width: 100%;
+    height: 100%;
     z-index: 11;
+    background-image: url("../assets/player-arrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.player::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 70%;
+    z-index: 11;
+    background-image: url("../assets/player-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .face-up::before    { transform: rotate(0deg); }
@@ -64,12 +89,21 @@
 .face-down::before  { transform: rotate(180deg); }
 .face-left::before  { transform: rotate(270deg); }
 
-.monster {
-    background: radial-gradient(circle, #e74c3c 60%, #777 61%);
+.monster, .loot, .boss {
+    z-index: 2;    
 }
 
-.loot {
-    z-index: 2;
+.monster::before {    
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 75%;
+    height: 75%;
+    background-image: url("../assets/enemy-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .loot::before {    
@@ -79,17 +113,41 @@
     left: 10%;
     width: 75%;
     height: 75%;
-    background-color: #fe9923;
+    background-image: url("../assets/chest.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .staircase {
-    background: linear-gradient(45deg, #555 25%, #333 25%, #333 50%, #555 50%, #555 75%, #333 75%, #333 100%);
-    background-size: 10px 10px;
     z-index: 1;
+    border: 2px rgba(0, 0, 0, 0.5) solid;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/stairs.png');
+    background-size: 100% 100%;
+}
+
+.boss::before {
+    content: '';
+    position: absolute;
+    top: 5%; 
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background-image: url("../assets/boss-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: boss-pulse 2s infinite ease-in-out;
+}
+
+@keyframes boss-pulse {
+    0%, 100% { filter: drop-shadow(0 0 2px #8E44AD) brightness(1); }
+    50% { filter: drop-shadow(0 0 10px #8E44AD) brightness(1.2); }
 }
 
 .hidden {
-    background-color: #222 !important;
+    background-color: #000 !important; /* Pitch black */
+    background-image: none !important;
 }
 
 .hidden * {
@@ -97,5 +155,5 @@
 }
 
 .visited {
-    filter: brightness(0.7);
+    filter: brightness(0.75);
 }

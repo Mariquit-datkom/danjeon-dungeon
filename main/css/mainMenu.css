@@ -1,0 +1,55 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/title-screen-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.title-screen-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 110px;
+}
+
+.game-title-container, .main-menu-container {
+    height: 100%;
+}
+
+.game-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-title {
+    width: 95%;
+    height: auto;
+    animation: bounce 1.3s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); animation-timing-function: ease-out; }
+    65% { transform: translateY(-10px); animation-timing-function: ease-in; }
+}
+
+.main-menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-menu-btn {
+    width: 340px;
+    height: 80px;
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.main-menu-btn:hover {
+    width: 360px;
+    height: 100px;
+}
