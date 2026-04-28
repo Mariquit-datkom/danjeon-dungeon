@@ -1,6 +1,6 @@
 # Danjeon Dungeon
 
-A web-based, retro-inspired **Roguelike Dungeon Crawler** built with a PHP backend and a vanilla JavaScript frontend. Navigate procedurally generated floors, manage a party of diverse heroes, and survive the depths of the Danjeon.
+A web-based, retro-inspired **Dungeon Crawler** built with a PHP backend and a vanilla JavaScript frontend. Navigate procedurally generated floors, manage a party of diverse heroes, and survive the depths of the Danjeon.
 
 ## ⚔️ Key Features
 
