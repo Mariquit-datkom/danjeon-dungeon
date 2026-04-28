@@ -1,4 +1,5 @@
-function initGame() {
+window.initCrawl = async function() {
+
     const width = 30;
     const height = 12;
     
@@ -17,11 +18,11 @@ function initGame() {
     let monsterCount, lootCount;
 
     if (randMaxFloorTiles > 150) {
-        monsterCount = Math.floor(Math.random() * (5 - 4 + 1)) + 4;
-        lootCount = (monsterCount === 5) ? 3 : 2;
+        monsterCount = Math.floor(Math.random() * (6 - 5 + 1)) + 3;
+        lootCount = (monsterCount === 6) ? 3 : 2;
     } else {
-        monsterCount = Math.floor(Math.random() * (3 - 2 + 1)) + 2;
-        lootCount = (monsterCount === 3) ? 2 : 1;
+        monsterCount = Math.floor(Math.random() * (4 - 3 + 1)) + 3;
+        lootCount = (monsterCount === 4) ? 2 : 1;
     }
     
     // Fill with stuff
@@ -35,4 +36,4 @@ function initGame() {
     drawMap();
 }
 
-initGame();
+initCrawl();

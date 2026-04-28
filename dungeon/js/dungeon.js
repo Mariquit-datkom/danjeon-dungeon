@@ -140,53 +140,6 @@ function checkProximity() {
     }
 }
 
-function startBattle(monY, monX) {
-    // Visual cue
-    // Here is where you will eventually call your Phase 3 Battle Logic
-
-    mapData[monY][monX] = 1;
-    drawMap();
-}
-
-function openLoot(lootY, lootX) {
-
-    mapData[lootY][lootX] = 1;
-    drawMap();
-}
-
-function attemptDescent() {
-    let monstersLeft = countMonsters();
-    const transitionLayer = document.getElementById('transition-layer');
-
-    if (monstersLeft === 0) {
-        isTransitioning = true;
-
-        transitionLayer.classList.add('no-transition');
-        transitionLayer.classList.remove('active', 'exit');
-
-        void transitionLayer.offsetWidth;
-
-        transitionLayer.classList.remove('no-transition');
-        transitionLayer.classList.add('active');
-
-        setTimeout(() => {
-            initGame(); 
-            
-            transitionLayer.classList.remove('active');
-            transitionLayer.classList.add('exit');
-
-            setTimeout(() => {
-                transitionLayer.classList.add('no-transition');
-                transitionLayer.classList.remove('exit');
-                isTransitioning = false;                  
-            }, 600);
-        }, 700);
-
-    } else {
-        
-    }
-}
-
 function updateFogOfWar() {
     const visionRadius = 2; // How many tiles far the player can see
 
@@ -258,7 +211,6 @@ function hasLineOfSight(x0, y0, x1, y1) {
     }
 }
 
-// Handle Keyboard Input
 window.addEventListener('keydown', (e) => {
     if (isTransitioning) return;
 

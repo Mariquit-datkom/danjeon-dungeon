@@ -1,0 +1,64 @@
+.modal-overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    width: 600px;
+    height: fit-content;
+    padding: 25px 50px 30px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+    /*background-image: '../assets/modalBg.png';*/
+    background-color: bisque;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translatex(40px); 
+        opacity: 0;
+    } to {
+        transform: translatex(0);
+        opacity: 1;
+    }
+}
+
+.back-btn-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#back-btn {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.new-game-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#player-name-input {
+    margin-top: 10px;
+    margin-bottom: 14px;
+}

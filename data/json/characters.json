@@ -1,0 +1,91 @@
+{
+    "001": {
+        "identity": {
+            "name": "Jax",
+            "class": "Rogue",
+            "species": "Human",
+            "rarity": "C"
+        },
+        "base_stats": {
+            "hp": 22,
+            "atk": 25,
+            "spa": 10,
+            "def": 15,
+            "spd": 12,
+            "crit": 24
+        },
+        "passive": "swift_strike"
+    },
+
+    "002": {
+        "identity": {
+            "name": "Thorin",
+            "class": "Barbarian",
+            "species": "Dwarf",
+            "rarity": "C"
+        },
+        "base_stats": {
+            "hp": 25,
+            "atk": 22,
+            "spa": 10,
+            "def": 18,
+            "spd": 15,
+            "crit": 20
+        },
+        "passive": "rage"
+    },
+
+    "003": {
+        "identity": {
+            "name": "Elowen",
+            "class": "Wizard",
+            "species": "Elf",
+            "rarity": "C"
+        },
+        "base_stats": {
+            "hp": 15,
+            "atk": 10,
+            "spa": 25,
+            "def": 12,
+            "spd": 24,
+            "crit": 14
+        },
+        "passive": "arcane_flow"
+    },
+
+    "004": {
+        "identity": {
+            "name": "Aegis",
+            "class": "Fighter",
+            "species": "Tiefling",
+            "rarity": "R"
+        },
+        "base_stats": {
+            "hp": 44,
+            "atk": 45,
+            "spa": 32,
+            "def": 41,
+            "spd": 29,
+            "crit": 26
+        },
+        "passive": "hellish_fortitude"
+    },
+
+    "005": {
+        "identity": {
+            "name": "Lumina",
+            "class": "Cleric",
+            "species": "Aasimar",
+            "rarity": "R"
+        },
+        "base_stats": {
+            "hp": 40,
+            "atk": 30,
+            "spa": 43,
+            "def": 35,
+            "spd": 42,
+            "crit": 27
+        },
+        "passive": "celestial_grace"
+    }    
+}

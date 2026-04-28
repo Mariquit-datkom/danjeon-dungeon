@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Dungeon Crawler</title>
-    <link rel="stylesheet" href="../main/css/global.css">
+    <link rel="stylesheet" href="../gameInit/css/global.css">
     <link rel="stylesheet" href="css/dungeon.css">
 </head>
 <body>
@@ -12,6 +12,7 @@
         <div class="ui-components"></div>
     </div>
 
+    <?php include_once 'dungeonEvents.php'; ?>
     <script src="js/dungeon.js"></script>
     <script src="js/init.js"></script>
 </body>

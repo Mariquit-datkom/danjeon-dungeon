@@ -70,20 +70,6 @@
     background-position: center;
 }
 
-.player::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 70%;
-    height: 70%;
-    z-index: 11;
-    background-image: url("../assets/player-icon.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .face-up::before    { transform: rotate(0deg); }
 .face-right::before { transform: rotate(90deg); }
 .face-down::before  { transform: rotate(180deg); }
