@@ -9,7 +9,7 @@ window.savePlayerData = async function(slot) {
     const dataString = JSON.stringify(window.playerAccount);
     
     try {
-        const response = await fetch('save_system.php', {
+        const response = await fetch('../data/saveGame.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
